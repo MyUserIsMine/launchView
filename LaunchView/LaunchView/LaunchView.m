@@ -67,10 +67,18 @@ static NSInteger showTime = 5;
     return self;
 }
 
-
+#pragma mark - 链接赋值，下载
 - (void)setImageUrl:(NSString *)imageUrl
 {
     _imageUrl = imageUrl;
+    NSString *oldUrl = [[NSUserDefaults standardUserDefaults]objectForKey:@"adOldImageUrl"];
+    if ([oldUrl isEqualToString:imageUrl]) {
+        
+    }else{
+        //可以判断网络，什么WiFi预加载
+        [[NSUserDefaults standardUserDefaults]setObject:imageUrl forKey:@"adOldImageUrl"];
+        [self downLoadAndSaveImage];
+    }
     _adView.image = [UIImage imageWithContentsOfFile:PATH_DIRECTORY];
     
 }
