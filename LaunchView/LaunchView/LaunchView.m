@@ -36,7 +36,11 @@ static NSInteger showTime = 5;
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        
+         BOOL isExist = [self isFileExistWithFilePath:PATH_DIRECTORY];
+        if (!isExist) {
+            self.alpha = 0.0;
+            [self dismiss];
+        }
         _showtime = showTime;
         //添加广告图片
         [self addSubview:({
@@ -55,7 +59,7 @@ static NSInteger showTime = 5;
             _countBtn = [[UIButton alloc] initWithFrame:CGRectMake(W_screenWidth - btnW - 24, btnH, btnW, btnH)];
             [_countBtn addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
             [_countBtn setTitle:[NSString stringWithFormat:@"%ld", _showtime] forState:UIControlStateNormal];
-            _countBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+            _countBtn.titleLabel.font = [UIFont systemFontOfSize:20];
             [_countBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             _countBtn.backgroundColor = [UIColor colorWithRed:38 /255.0 green:38 /255.0 blue:38 /255.0 alpha:0.6];
             _countBtn.layer.cornerRadius = 4;
@@ -76,7 +80,7 @@ static NSInteger showTime = 5;
         
     }else{
         //可以判断网络，什么WiFi预加载
-        [[NSUserDefaults standardUserDefaults]setObject:imageUrl forKey:@"adOldImageUrl"];
+       
         [self downLoadAndSaveImage];
     }
     _adView.image = [UIImage imageWithContentsOfFile:PATH_DIRECTORY];
@@ -200,6 +204,7 @@ static NSInteger showTime = 5;
            // NSLog(@"保存成功");
             [self deleteOldImage];// 保存成功后删除旧图片
             [[NSUserDefaults standardUserDefaults] setValue:adImageName forKey:adImageName];
+             [[NSUserDefaults standardUserDefaults]setObject:self. imageUrl forKey:@"adOldImageUrl"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             // 如果有广告链接，需要将广告链接也保存下来
         }else{
@@ -219,6 +224,11 @@ static NSInteger showTime = 5;
     }
 }
 
-
+- (BOOL)isFileExistWithFilePath:(NSString *)filePath
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isDirectory = FALSE;
+    return [fileManager fileExistsAtPath:filePath isDirectory:&isDirectory];
+}
 
 @end
