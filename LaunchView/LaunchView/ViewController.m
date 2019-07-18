@@ -16,6 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 400, 100, 30)];
+    label.text = @"首页";
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
