@@ -231,4 +231,10 @@ static NSInteger showTime = 5;
     return [fileManager fileExistsAtPath:filePath isDirectory:&isDirectory];
 }
 
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+
 @end
