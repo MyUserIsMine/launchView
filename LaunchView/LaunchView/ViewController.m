@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import <sdk/HttpUrl.h>
 @interface ViewController ()
 
 @end
@@ -21,6 +21,9 @@
     label.text = @"首页";
     label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label];
+    [HttpUrl GET:@"" dict:nil hud:self.view isShow:YES WithSuccessBlock:^(id data) {
+        
+    }];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

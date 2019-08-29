@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97F63EEA2315560C00A19577 /* sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F63EE92315560C00A19577 /* sdk.framework */; };
 		AA4886E022E0083700520AEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4886DF22E0083700520AEE /* AppDelegate.m */; };
 		AA4886E322E0083700520AEE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4886E222E0083700520AEE /* ViewController.m */; };
 		AA4886E822E0083900520AEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4886E722E0083900520AEE /* Assets.xcassets */; };
@@ -16,7 +17,21 @@
 		AAAA42EB22E03F9600249C73 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAA42EA22E03F9600249C73 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		97F63EE82315551B00A19577 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		97F63EE92315560C00A19577 /* sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = sdk.framework; sourceTree = "<group>"; };
 		AA4886DB22E0083700520AEE /* LaunchView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4886DE22E0083700520AEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA4886DF22E0083700520AEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -37,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAAA42EB22E03F9600249C73 /* QuartzCore.framework in Frameworks */,
+				97F63EEA2315560C00A19577 /* sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +85,7 @@
 				AA4886E222E0083700520AEE /* ViewController.m */,
 				AA4886F422E0119100520AEE /* LaunchView.h */,
 				AA4886F522E0119100520AEE /* LaunchView.m */,
+				97F63EE92315560C00A19577 /* sdk.framework */,
 				AA4886E722E0083900520AEE /* Assets.xcassets */,
 				AA4886E922E0083900520AEE /* LaunchScreen.storyboard */,
 				AA4886EC22E0083900520AEE /* Info.plist */,
@@ -95,6 +112,7 @@
 				AA4886D722E0083700520AEE /* Sources */,
 				AA4886D822E0083700520AEE /* Frameworks */,
 				AA4886D922E0083700520AEE /* Resources */,
+				97F63EE82315551B00A19577 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -293,6 +311,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X2457Y92ZW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaunchView",
+				);
 				INFOPLIST_FILE = LaunchView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,6 +333,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X2457Y92ZW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LaunchView",
+				);
 				INFOPLIST_FILE = LaunchView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
